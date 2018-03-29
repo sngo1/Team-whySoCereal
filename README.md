@@ -17,3 +17,4 @@
 #### In d3, we will be *enter*ing all the brand names initially with the factors as an array attached to each factor. Then, we will utilize the data as is to rank and display the information. Transitions will be used to uncover/hide information and when the user's mouse moves between factors on the factor/navigation bar. The charts and graphs in our webpage will most resemble the bubble chart and the streamgraph.
 
 ### Visualize It
+![alt text](https://github.com/sngo1/whySoCereal/blob/master/Cereal%20Numbers.jpg)
