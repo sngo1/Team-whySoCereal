@@ -10,3 +10,6 @@ Adam Abbas, Holden Higgins, Jawadul Kadir, and Samantha Ngo
 
 adamA, holdenH, samanthaN -- 2018-03-27 13:00
 Decided to use cereal dataset
+
+adamA, holdenH, samanthaN -- 2018-03-29 06:07
+Wrote README deliverables
