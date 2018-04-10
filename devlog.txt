@@ -18,7 +18,7 @@ adamA, jawadulK, samanthaN -- 2018-04-9 12:46
 Reviewed issues, brainstormed new design plan
 
 samanthaN -- 2018-04-10 12:52
-Uploaded dataset
+Uploaded dataset, added basic flask and files
 
 adamA -- 2018-04-10 13:01
 Updated the readme to reflect our new, exciting idea
