@@ -1,3 +1,10 @@
+### Task Designation:
+1. Samantha - Use d3 to create svg and webpage elements
+   Holden - Turn the data into d3 objects
+2. Adam - Create clickable features for initial circles and create branching features
+3. Jawad - Create branching features and sorting features
+
+
 # Cereal Numbers
 ### Stuyvesant High School's SoftDev Analysis of a Cereal Dataset
 ### by Team whySoCereal [Adam Abbas, Holden Higgins, Jawad Kadir, & Samantha Ngo][Softdev pd7]
@@ -17,4 +24,4 @@
 #### We use d3 to create bubbles in svg, as well as to make any sort of animation touches. Clicking on bubbles will cause branches to pop out, connecting the bubbles. All of the cereals will be objects, with their nutrition being instance variables. An array will contain all of these cereals, and we will be able to iterate through it and choose what appears based on what the user has selected!
 
 ### Visualize It
-![alt text](https://github.com/sngo1/whySoCereal/blob/master/Cereal%20Numbers.jpg)
+### TBD
