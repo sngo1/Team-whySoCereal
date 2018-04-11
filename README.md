@@ -1,6 +1,6 @@
 ### Task Designation:
-1. Samantha - Use d3 to create svg and webpage elements
-   Holden - Turn the data into d3 objects
+1. - Samantha - Use d3 to create svg and webpage elements
+- Holden - Turn the data into d3 objects
 2. Adam - Create clickable features for initial circles and create branching features
 3. Jawad - Create branching features and sorting features
 
