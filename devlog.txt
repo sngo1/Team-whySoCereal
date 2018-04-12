@@ -8,13 +8,22 @@ Adam Abbas, Holden Higgins, Jawadul Kadir, and Samantha Ngo
   \/  \/ |_| |_|\__, \__/\___/\____/\___|_|  \___|\__,_|_|
                 |___/                                     
 
+--------------------------------------------------------------------------
+Design Changes:
+
+2018-04-09: Changed the data visualization plan from a grid and a bubble chart to bubble charts and branches
+
+2018-04-11: Decided to initially input all the data into objects --> changed to putting all the data into a database and then using the database to 
+create the objects. 
+
+--------------------------------------------------------------------------
 adamA, holdenH, samanthaN -- 2018-03-27 13:00
 Decided to use cereal dataset
 
 adamA, holdenH, samanthaN -- 2018-03-29 06:07
 Wrote README deliverables
 
-adamA, jawadulK, samanthaN -- 2018-04-9 12:46
+adamA, jawadulK, samanthaN -- 2018-04-09 12:46
 Reviewed issues, brainstormed new design plan
 
 samanthaN -- 2018-04-10 12:52
@@ -23,3 +32,5 @@ Uploaded dataset, added basic flask and files
 adamA -- 2018-04-10 13:01
 Updated the readme to reflect our new, exciting idea
 
+adamA, jawadulK, samanthaN, holdenH -- 2018-04-11 12:56
+Designated tasks for the week; changed design plan
