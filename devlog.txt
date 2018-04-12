@@ -46,3 +46,6 @@ Worked on branch objectification
 
 abbasA -- 2018-04-12 13:16
 Wrote the cereal object constructer, and wrote the theoretically working code to display and resize cereals when things are clicked
+
+jawadulK -- 2018-04-12 13:18
+Completed root branching
