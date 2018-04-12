@@ -34,3 +34,10 @@ Updated the readme to reflect our new, exciting idea
 
 adamA, jawadulK, samanthaN, holdenH -- 2018-04-11 12:56
 Designated tasks for the week; changed design plan
+
+samanthaN -- 2018-04-10 20:11
+Changed tasks; started writing database and parser functions
+
+samanthaN -- 2018-04-10 21:48
+Completed database and csv parser functions
+
