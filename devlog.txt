@@ -1,20 +1,20 @@
 WhySoCereal
 Adam Abbas, Holden Higgins, Jawadul Kadir, and Samantha Ngo
 
- __    __ _           __         ___                    _ 
+ __    __ _           __         ___                    _
 / / /\ \ \ |__  _   _/ _\ ___   / __\___ _ __ ___  __ _| |
 \ \/  \/ / '_ \| | | \ \ / _ \ / /  / _ \ '__/ _ \/ _` | |
  \  /\  /| | | | |_| |\ \ (_) / /__|  __/ | |  __/ (_| | |
   \/  \/ |_| |_|\__, \__/\___/\____/\___|_|  \___|\__,_|_|
-                |___/                                     
+                |___/
 
 --------------------------------------------------------------------------
 Design Changes:
 
 2018-04-09: Changed the data visualization plan from a grid and a bubble chart to bubble charts and branches
 
-2018-04-11: Decided to initially input all the data into objects --> changed to putting all the data into a database and then using the database to 
-create the objects. 
+2018-04-11: Decided to initially input all the data into objects --> changed to putting all the data into a database and then using the database to
+create the objects.
 
 --------------------------------------------------------------------------
 adamA, holdenH, samanthaN -- 2018-03-27 13:00
@@ -41,3 +41,5 @@ Changed tasks; started writing database and parser functions
 samanthaN -- 2018-04-10 21:48
 Completed database and csv parser functions
 
+jawadulK -- 2018-04-12 00:18
+Worked on branch objectification
