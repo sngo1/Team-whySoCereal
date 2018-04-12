@@ -6,6 +6,7 @@ import sqlite3
 import random   #enable control of a sqlite database
 import csv       #facilitates CSV I/O
 import os #Used for os.remove()
+import json
 
 # The following line may cause errors when running this file from app.py:
 f = "../data/cereals.db"
@@ -77,5 +78,24 @@ def addData(file):
                 add_entry(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15])
     return True
 
-addData('../data/cereals.csv')
-display_tables()
+# addData('../data/cereals.csv')
+# display_tables()
+
+# ----------------------------------------------------- END OF PARSER FUNCTIONS
+# readFile('../data/cereals.csv')
+
+def csvToJSON(csvfile, jsonTXT):
+    print "Converting python to JSON..."
+    cerealNumbers = {"cereals":[]}
+    with open(csvfile) as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            # print row
+            cerealNumbers["cereals"].append(row)
+            # print dataHolder
+    with open(jsonTXT, 'w') as outfile:  
+        json.dump(cerealNumbers, outfile)
+    print "Python to JSON complete."
+    return True
+
+csvToJSON('../data/cereals.csv','cereals.txt')
