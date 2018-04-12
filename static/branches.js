@@ -5,36 +5,6 @@ var root = document.createElementNS(
     "circle"
 )
 
-root.setAttribute("id", "root")
-
-root.cx = svg.getAttribute("width") / 2;
-root.cy = svg.getAttribute("height") / 2;
-root.r = 50;
-root.setAttribute("cx", root.cx);
-root.setAttribute("cy", root.cy);
-root.setAttribute("r", root.r);
-root.setAttribute("fill", "red");
-root.branches = [];
-root.branches.push(createBrand("Kellog's", root));
-root.branches.push(createBrand("Post", root));
-root.branches.push(createBrand("Quaker", root));
-root.branches.push(createBrand("General Mills", root));
-root.branches.push(createBrand("Nestle", root));
-root.branches.push(createBrand("Ralston", root));
-root.exploded = false;
-root.explode = function(){
-    for(var branch in branches){
-		branch.display();
-    }
-	root.exploded = true;
-}
-root.contract = function(){
-	for(var branch in branches){
-		branch.hide();
-    }
-	root.exploded = false;
-}
-
 var createBrand = function(name, root){
 	var brand = document.createElementNS(
 	    "http://www.w3.org/2000/svg",
@@ -42,12 +12,12 @@ var createBrand = function(name, root){
 	)
 	brand.root = root;
 	angle = Math.random() * 2 * Math.PI;
-	brand.cx = root.cx + Math.floor(200 * Math.cos(angle));
-	brand.cy = root.cy + Math.floor(200 * Math.sin(angle));
-	brand.r = 50;
-	brand.setAttribute("cx", brand.cx);
-	brand.setAttribute("cy", brand.cy);
-	brand.setAttribute("r", brand.r);
+	brand.centerX = root.centerX + Math.floor(200 * Math.cos(angle));
+	brand.centerY = root.centerY + Math.floor(200 * Math.sin(angle));
+	brand.radius = 50;
+	brand.setAttribute("cx", brand.centerX);
+	brand.setAttribute("cy", brand.centerY);
+	brand.setAttribute("r", brand.radius);
 	brand.setAttribute("fill", "blue");
 	brand.setAttribute("id", name);
 	brand.branches = [];
@@ -58,29 +28,66 @@ var createBrand = function(name, root){
 		"http://www.w3.org/2000/svg",
 		"line"
 	)
-	brand.line.x1 = root.cx;
-	brand.line.y1 = root.cy;
-	brand.line.x2 = brand.cx;
-	brand.line.y2 = brand.cy;
-	brand.line.setAttribute("x1", brand.line.x1);
-	brand.line.setAttribute("y1", brand.line.y1);
-	brand.line.setAttribute("x2", brand.line.x2);
-	brand.line.setAttribute("y2", brand.line.y2);
+	brand.line.X1 = root.centerX;
+	brand.line.Y1 = root.centerY;
+	brand.line.X2 = brand.centerX;
+	brand.line.Y2 = brand.centerY;
+	brand.line.setAttribute("x1", brand.line.X1);
+	brand.line.setAttribute("y1", brand.line.Y1);
+	brand.line.setAttribute("x2", brand.line.X2);
+	brand.line.setAttribute("y2", brand.line.Y2);
 	brand.line.setAttribute("stroke", "black");
 	brand.line.setAttribute("id", name + "line");
 	brand.exploded = false;
 	brand.explode = function(){
-	    for(var branch in branches){
+	    for(var branch in brand.branches){
 			branch.display();
 	    }
 		brand.exploded = true;
 	}
 	brand.display = function(){
 		svg.appendChild(brand);
-		svg.appendChild(line);
+		svg.appendChild(brand.line);
 	}
 	brand.hide = function(){
 		svg.removeChild(brand);
-		svg.removeChild(line);
+		svg.removeChild(brand.line);
 	}
+    brand.addEventListener("click", function(){brand.exploded?brand.contract():brand.explode()})
+	return brand;
 }
+
+root.setAttribute("id", "root")
+
+root.centerX = svg.getAttribute("width") / 2;
+root.centerY = svg.getAttribute("height") / 2;
+root.radius = 50;
+root.setAttribute("cx", ""+root.centerX);
+root.setAttribute("cy", ""+root.centerY);
+root.setAttribute("r", ""+root.radius);
+root.setAttribute("fill", "red");
+root.branches = [];
+root.branches.push(createBrand("Kellog's", root));
+root.branches.push(createBrand("Post", root));
+root.branches.push(createBrand("Quaker", root));
+root.branches.push(createBrand("General Mills", root));
+root.branches.push(createBrand("Nestle", root));
+root.branches.push(createBrand("Ralston", root));
+root.exploded = false;
+root.explode = function(){
+    for(branch in root.branches){
+		root.branches[branch].display();
+    }
+	root.exploded = true;
+}
+root.contract = function(){
+    for(branch in root.branches){
+	
+		root.branches[branch].hide();
+    }
+	root.exploded = false;
+}
+
+svg.appendChild(root);
+
+root.addEventListener("click", function(){root.exploded?root.contract():root.explode()})
