@@ -9,18 +9,17 @@ import os #Used for os.remove()
 
 # The following line may cause errors when running this file from app.py:
 f = "../data/cereals.db"
+os.remove(f) # Used during testing to remove file at the beginning
 
 def setupDatabase():
     db = sqlite3.connect(f) #open if f exists, otherwise create
     c = db.cursor()    #facilitate db ops
     command = "CREATE TABLE cereals(name TEXT, manufacturer TEXT, type TEXT, calories INTEGER, protein INTEGER, fat INTEGER, sodium INTEGER, fiber INTEGER, carbs INTEGER, sugars INTEGER, potassium INTEGER, vitamins INTEGER, shelf_life INTEGER, weight REAL, cups REAL, rating REAL)"
-    print "C.EXECUTE: ", c.execute(command)
-            
+    print "CREATE DATABASE: ", c.execute(command)
     db.commit()
     db.close()
     return True
 
-os.remove(f) # Used during testing to remove file at the beginning
 setupDatabase()
 
 # Create tables
@@ -31,7 +30,7 @@ def add_entry(name, mfr, type, calories, protein, fat, sodium, fiber, carbs, sug
     c = db.cursor()    #facilitate db ops
     command = "INSERT INTO cereals(name, manufacturer, type, calories, protein, fat, sodium, fiber, carbs, sugars, potassium, vitamins, shelf_life, weight, cups, rating) VALUES (" + '"' + name + '"' + ", " + "'" +  mfr + "'" + ',' + "'" + type + "'" + ',' + str(calories) + ',' + str(protein) + ',' + str(fat) + "," + str(sodium) + "," + str(fiber) + ',' + str(carbs) + ',' + str(sugar) + ',' + str(potassium) + ',' + str(vitamins) + ',' + str(shelf_life) + ',' + str(weight) + ',' + str(cups) + ',' + str(rating) + ")"
     # print command
-    # print "ADD ENTRY: ", c.execute(command)           
+    c.execute(command)           
     db.commit()
     db.close()
     return True
@@ -45,7 +44,7 @@ def display_tables():
     #f = "../data/cereals.db"
     db = sqlite3.connect(f) #open if f exists, otherwise create
     c = db.cursor()    #facilitate db ops
-    c.execute("SELECT name FROM cereals")
+    c.execute("SELECT manufacturer FROM cereals")
     rows = c.fetchall()
     db.commit()
     db.close()
@@ -74,7 +73,7 @@ def addData(file):
         reader = csv.reader(csvfile)
         for row in reader:
             if row[0] != "name":
-                print "NAME: ", row[0]
+                # print "NAME: ", row[0]
                 add_entry(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15])
     return True
 
