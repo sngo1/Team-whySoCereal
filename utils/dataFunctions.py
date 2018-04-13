@@ -62,12 +62,29 @@ def display_tables():
 
 # ----------------------------------------------------- END OF SQLITE FUNCTIONS
 
+dataHolder = []
+# Preps data to be put into an array
 def readFile(file):
+    print "Reading file @ " + file
     with open(file) as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
-            print row
+            # print "------------------------------------------------------------"
+            # print row
+            counter = 0;
+            while counter < 16:
+                try:
+                    row[counter] = float(row[counter])
+                    counter += 1
+                except:
+                    counter += 1
+            # print "NEW: ", row
+            # print row, ","
+            dataHolder.append(row)
+    # print "FINAL: ", dataHolder
+    print "File read."
     return True
+
 
 def addData(file):
     with open(file) as csvfile:
@@ -82,7 +99,7 @@ def addData(file):
 # display_tables()
 
 # ----------------------------------------------------- END OF PARSER FUNCTIONS
-# readFile('../data/cereals.csv')
+readFile('../data/cereals.csv')
 
 def csvToJSON(csvfile, jsonTXT):
     print "Converting python to JSON..."
