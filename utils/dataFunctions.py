@@ -10,7 +10,7 @@ import json
 
 # The following line may cause errors when running this file from app.py:
 f = "../data/cereals.db"
-os.remove(f) # Used during testing to remove file at the beginning
+#os.remove(f) # Used during testing to remove file at the beginning
 
 def setupDatabase():
     db = sqlite3.connect(f) #open if f exists, otherwise create
@@ -31,7 +31,7 @@ def add_entry(name, mfr, type, calories, protein, fat, sodium, fiber, carbs, sug
     c = db.cursor()    #facilitate db ops
     command = "INSERT INTO cereals(name, manufacturer, type, calories, protein, fat, sodium, fiber, carbs, sugars, potassium, vitamins, shelf_life, weight, cups, rating) VALUES (" + '"' + name + '"' + ", " + "'" +  mfr + "'" + ',' + "'" + type + "'" + ',' + str(calories) + ',' + str(protein) + ',' + str(fat) + "," + str(sodium) + "," + str(fiber) + ',' + str(carbs) + ',' + str(sugar) + ',' + str(potassium) + ',' + str(vitamins) + ',' + str(shelf_life) + ',' + str(weight) + ',' + str(cups) + ',' + str(rating) + ")"
     # print command
-    c.execute(command)           
+    c.execute(command)
     db.commit()
     db.close()
     return True
@@ -110,7 +110,7 @@ def csvToJSON(csvfile, jsonTXT):
             # print row
             cerealNumbers["cereals"].append(row)
             # print dataHolder
-    with open(jsonTXT, 'w') as outfile:  
+    with open(jsonTXT, 'w') as outfile:
         json.dump(cerealNumbers, outfile)
     print "Python to JSON complete."
     return True
