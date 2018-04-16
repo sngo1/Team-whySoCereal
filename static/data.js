@@ -1,3 +1,39 @@
+var make_cereal = function(n, b, p, c, f, s, sd){
+  var cereal = {
+    name: n,
+    brand: b,
+    protein: p,
+    carbs: c,
+    fats: f,
+    sugar: s,
+    sodium: sd,
+    x: 0;
+    y: 0;
+  };
+  cereal.display = function(){
+    esveegee.appendChild(cereal.circleObj);
+  }
+  cereal.createCirc = function(){
+    var cereacle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    cereacle.setAttribute("fill", "yellow");
+    cereacle.setAttribute("r", 50);
+    cereacle.setAttribute("cx", cereal.x);
+    cereacle.setAttribute("cy", cereal.y);
+    return cereacle;
+  };
+  cereal.circleObj = createCirc();
+  cereal.hide = function(){
+    esveegee.removeChild();
+  };
+}
+
+var cereobjs = [];
+
+for(entry in data){
+  cereal = data[entry];
+  cereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
+}
+
 var data = [
     ['name', 'mfr', 'type', 'calories', 'protein', 'fat', 'sodium', 'fiber', 'carbo', 'sugars', 'potass', 'vitamins', 'shelf', 'weight', 'cups', 'rating'] ,
     ['100% Bran', 'N', 'C', 70.0, 4.0, 1.0, 130.0, 10.0, 5.0, 6.0, 280.0, 25.0, 3.0, 1.0, 0.33, 68.402973] ,

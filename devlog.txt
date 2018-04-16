@@ -57,3 +57,6 @@ to convert python/csv/JSON to javascript
 samanthaN -- 2018-04-12 20:16
 Failed to find a way to make conversion; manually created javascript array
 using dataFunctions.py functions and GUI methods.
+
+abbasA -- 2018-04-16 13:13
+Converted all the cereal data into an array of cereal objects!! Made the functions for all the macros.
