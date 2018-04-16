@@ -8,9 +8,15 @@ import csv       #facilitates CSV I/O
 import os #Used for os.remove()
 import json
 
+'''
 # The following line may cause errors when running this file from app.py:
 f = "../data/cereals.db"
+<<<<<<< HEAD
 #os.remove(f) # Used during testing to remove file at the beginning
+=======
+os.remove(f) # Used during testing to remove file at the beginning
+'''
+>>>>>>> 745fdfb218ed34fc58af1a356ba192c7b2511449
 
 def setupDatabase():
     db = sqlite3.connect(f) #open if f exists, otherwise create
@@ -21,7 +27,7 @@ def setupDatabase():
     db.close()
     return True
 
-setupDatabase()
+# setupDatabase()
 
 # Create tables
 # PARAM: N/A
@@ -99,7 +105,7 @@ def addData(file):
 # display_tables()
 
 # ----------------------------------------------------- END OF PARSER FUNCTIONS
-readFile('../data/cereals.csv')
+# readFile('../data/cereals.csv')
 
 def csvToJSON(csvfile, jsonTXT):
     print "Converting python to JSON..."
@@ -115,4 +121,4 @@ def csvToJSON(csvfile, jsonTXT):
     print "Python to JSON complete."
     return True
 
-csvToJSON('../data/cereals.csv','cereals.txt')
+# csvToJSON('../data/cereals.csv','cereals.txt')
