@@ -8,15 +8,10 @@ import csv       #facilitates CSV I/O
 import os #Used for os.remove()
 import json
 
-'''
+
 # The following line may cause errors when running this file from app.py:
 f = "../data/cereals.db"
-<<<<<<< HEAD
-#os.remove(f) # Used during testing to remove file at the beginning
-=======
-os.remove(f) # Used during testing to remove file at the beginning
-'''
->>>>>>> 745fdfb218ed34fc58af1a356ba192c7b2511449
+#os.remove(f) # Used during testing to remove file at the beginning9
 
 def setupDatabase():
     db = sqlite3.connect(f) #open if f exists, otherwise create

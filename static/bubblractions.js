@@ -9,12 +9,9 @@ var make_cereal = function(n, b, p, c, f, s, sd){
     fats: f,
     sugar: s,
     sodium: sd,
-    x: 0;
-    y: 0;
+    x: 0,
+    y: 0
   };
-  cereal.display = function(){
-    esveegee.appendChild(cereal.circleObj);
-  }
   cereal.createCirc = function(){
     var cereacle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     cereacle.setAttribute("fill", "yellow");
@@ -23,10 +20,14 @@ var make_cereal = function(n, b, p, c, f, s, sd){
     cereacle.setAttribute("cy", cereal.y);
     return cereacle;
   };
-  cereal.circleObj = createCirc();
+  cereal.circleObj = cereal.createCirc();
   cereal.hide = function(){
     esveegee.removeChild();
   };
+  cereal.display = function(){
+    consolelog("display!!");
+    esveegee.appendChild(cereal.circleObj);
+  }
 }
 
 var data = [
@@ -127,7 +128,7 @@ var kell_click = function(){
   }
 }
 
-var kell = document.getElementById("Kellogs");
+var kell = document.getElementById("Kellog's");
 kell.addEventListener("click", kell_click);
 
 
@@ -136,7 +137,7 @@ var resize_protein = function(){
     d3.select("#"+cereobjs[cereal].name).data(cereobjs[cereal].protein).attr("r", function(d){ Math.pow(d, .5) * 20 });
   }
 }
-
+/*
 var protein = document.getElementById("protein");
 protein.addEventListener("click", resize_protein);
 
@@ -157,3 +158,4 @@ var resize_fats = function(){
 
 var fats = document.getElementById("fats");
 fats.addEventListener("click", resize_fats);
+*/
