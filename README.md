@@ -13,6 +13,20 @@
 
 - #### *80 Cereals* was compiled by user Chris Crawford on Kaggle. Find it [here.](https://www.kaggle.com/crawford/80-cereals)
 
+## Launch Instructions:
+Welcome Stuy APCS-level students! We are glad you have decided to be our beta tester! Here are some steps to bring you up to speed:
+1. Our website runs on Flask. Please install it using the documentation [here.](http://flask.pocoo.org/docs/0.12/installation/)
+2. ```if !pythonInstalledAlready:``` If you don't still have python on your computer from Intro to CS 2, download Python **2.7.14** [here.](https://www.python.org/downloads/) Make sure you can run python commands in the terminal using simply: \
+```python <name-of-python-file-here>```\
+If you can't do that, learn how by reading 2.1. Invoking the Interpreter [here.](https://docs.python.org/2/tutorial/interpreter.html#invoking-the-interpreter) \
+```else:``` Disregard and move along.
+3. Next, you're going to need a *virtual environment*. Follow the instructions on the Flask installation page to create and launch your
+virtual environment. All the answers are on that [page.](http://flask.pocoo.org/docs/0.12/installation/)
+4. Once you're in your virtual environment, we can get started. Clone our github repo somewhere easily accessible. 
+5. ```cd``` into our root repo(the folder where app.py is located) and enter ```python app.py``` into your terminal.
+6. Finally, open the browser of your choice and type ```localhost:5000``` into the address line. Enter, and voila! Our website should be working for you.
+
+## More on our THOUGHT PROCESS - JARGON!
 ### What will be displayed without user interaction?
 At its core, our page will be a big bubble chart, with user interaction changing what and how things appear. The initial page will have 6 bubbles with cereal manufacturers, as well as smaller bubbles underneath with nutrient labels. By clicking a manufacturer, all of the cereal by that manufacturer will appear on the page. Clicking a nutrient (like protein, carbs, etc.) will adjust the size of the cereal bubbles based on how much of that nutrient each cereal has. Upon hovering over cereals, you will receive more information!
 
