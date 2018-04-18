@@ -1,14 +1,14 @@
 var make_cereal = function(n, b, p, c, f, s, sd){
   var cereal = {
-    name: n,
-    brand: b,
-    protein: p,
-    carbs: c,
-    fats: f,
-    sugar: s,
-    sodium: sd,
-    x: 0;
-    y: 0;
+      name: n,
+      brand: b,
+      protein: p,
+      carbs: c,
+      fats: f,
+      sugar: s,
+      sodium: sd,
+      x: 0,
+      y: 0
   };
   cereal.display = function(){
     esveegee.appendChild(cereal.circleObj);
