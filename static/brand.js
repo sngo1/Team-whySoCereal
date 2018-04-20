@@ -14,11 +14,11 @@ var createBrand = function(name, root){
     brand.setAttribute("fill", "lightgreen");
     brand.setAttribute("id", name);
     brand.branches = [];
-    brand.cerealcles = [];
+    brand.cereacles = [];
     for (var cereal in cereals){
 	if(cereals[cereal]['brand'] == name[0]){
 	    brand.branches.push(make_cereal(data[cereal][0], data[cereal][1], data[cereal][4],data[cereal][8],data[cereal][5],data[cereal][9],data[cereal][6]));
-	    brand.cereacles.push(
+	    brand.cereacles.push(brand.branches[brand.branches.length - 1].createCirc())
 	}
     }
     brand.line = document.createElementNS(
@@ -50,18 +50,15 @@ var createBrand = function(name, root){
 	svg.appendChild(brand.label);
     }
     brand.explode = function(){
-	//for(var branch in brand.branches){
-	    //	    branch.display();
-	  //  console.log(brand.branches[branch]);
-	//}
-	console.log(brand.branches);
+	for (var cereacle in brand.cereacles)
+	    svg.appendChild(brand.cereacles[cereacle]);
+	//console.log(brand.branches);
 	brand.exploded = true;
     }
     brand.contract = function(){
-	for (var cereal in brand.branches){
-	    
-	    
-	}
+	for (var cereacle in brand.cereacles)
+	    svg.removeChild(brand.cereacles[cereacle]);
+	brand.exploded = false;
     }
     brand.hide = function(){
 	svg.removeChild(brand);
