@@ -1,36 +1,39 @@
 var make_cereal = function(n, b, p, c, f, s, sd){
   var cereal = {
-      name: n,
-      brand: b,
-      protein: p,
-      carbs: c,
-      fats: f,
-      sugar: s,
-      sodium: sd,
-      x: 0,
-      y: 0
+    name: n,
+    brand: b,
+    protein: p,
+    carbs: c,
+    fats: f,
+    sugar: s,
+    sodium: sd,
+    x: 100,
+    y: 100
   };
-  cereal.display = function(){
-    esveegee.appendChild(cereal.circleObj);
-  }
   cereal.createCirc = function(){
     var cereacle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     cereacle.setAttribute("fill", "yellow");
     cereacle.setAttribute("r", 50);
     cereacle.setAttribute("cx", cereal.x);
     cereacle.setAttribute("cy", cereal.y);
+    console.log(cereacle);
     return cereacle;
   };
-  cereal.circleObj = createCirc();
   cereal.hide = function(){
     esveegee.removeChild();
   };
+  cereal.display = function(){
+    consolelog("display!!");
+    esveegee.appendChild(cereal.createCirc());
+  }
+  return cereal;
 }
+
 
 var cereobjs = [];
 
 for(entry in data){
-  cereal = data[entry];
+  var cereal = data[entry];
   cereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
 }
 console.log(cereobjs);

@@ -60,3 +60,9 @@ using dataFunctions.py functions and GUI methods.
 
 abbasA -- 2018-04-16 13:13
 Converted all the cereal data into an array of cereal objects!! Made the functions for all the macros.
+
+abbasA -- 2018-04-22 14:43
+Working on debugging. The cereobjs array is empty, probably has something to do with carrying over from other files, but throwing all of the code into one file breaks it.
+
+abbasA -- 2018-04-22 18:44
+Array now gets properly made, cereal coordinates arent changing though... they keep showing up as 0

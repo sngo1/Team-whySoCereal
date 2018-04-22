@@ -18,15 +18,15 @@ var make_cereal = function(n, b, p, c, f, s, sd){
     cereacle.setAttribute("r", 50);
     cereacle.setAttribute("cx", cereal.x);
     cereacle.setAttribute("cy", cereal.y);
+    console.log(cereacle);
     return cereacle;
   };
-  cereal.circleObj = cereal.createCirc();
   cereal.hide = function(){
     esveegee.removeChild();
   };
   cereal.display = function(){
     consolelog("display!!");
-    esveegee.appendChild(cereal.circleObj);
+    esveegee.appendChild(cereal.createCirc());
   }
 }
 

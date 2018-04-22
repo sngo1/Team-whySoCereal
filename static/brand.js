@@ -45,9 +45,9 @@ var createBrand = function(name, root){
     brand.label.innerHTML = name
     brand.ed = false;
     brand.display = function(){
-	svg.appendChild(brand);
-	svg.appendChild(brand.line);
-	svg.appendChild(brand.label);
+	     svg.appendChild(brand);
+	     svg.appendChild(brand.line);
+	     svg.appendChild(brand.label);
     }
     brand.explode = function(){
 	for (var cereacle in brand.cereacles)
