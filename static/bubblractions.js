@@ -9,8 +9,8 @@ var make_cereal = function(n, b, p, c, f, s, sd){
     fats: f,
     sugar: s,
     sodium: sd,
-    x: 0,
-    y: 0
+    x: 100,
+    y: 100
   };
   cereal.createCirc = function(){
     var cereacle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -111,12 +111,13 @@ var data = [
 ];
 
 
-var cerecereobjs = [];
+var cereobjs = [];
 
 for(entry in data){
   cereal = data[entry];
-  cerecereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
+  cereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
 }
+/*
 
 var kell_click = function(){
   for(cereal in cereobjs){

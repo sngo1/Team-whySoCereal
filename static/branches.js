@@ -1,9 +1,9 @@
 var svg = document.getElementById("vimage");
 
-console.log(data);
+//console.log(data);
 
 var root = createRoot();
 
 svg.appendChild(root);
 
-console.log(cereals);
+//console.log(cereals);

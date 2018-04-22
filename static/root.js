@@ -23,6 +23,8 @@ var createRoot = function(){
 	for(branch in root.branches){
 	    root.branches[branch].display();
 	}
+  var kell = document.getElementById("Kellog's");
+  kell.addEventListener("click", kell_click);
 	root.exploded = true;
     }
     root.contract = function(){
@@ -35,4 +37,17 @@ var createRoot = function(){
 
     root.addEventListener("click", function(){root.exploded?root.contract():root.explode()})
     return root;
+}
+
+
+var kell_click = function(){
+  console.log(cereobjs);
+  for(cereal in cereobjs){
+    console.log(cereobjs[cereal]);
+    if(cereobjs[cereal].brand = "Kellog's"){
+      cereobjs[cereal].x = Math.random() * 700;
+      cereobjs[cereal].y = Math.random() * 800;
+      cereobjs[cereal].display();
+    }
+  }
 }

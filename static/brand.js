@@ -16,15 +16,15 @@ var createBrand = function(name, root){
     brand.branches = [];
     brand.cereacles = [];
     for (var cereal in cereals){
-	if(cereals[cereal]['brand'] == name[0]){
-	    brand.branches.push(make_cereal(data[cereal][0], data[cereal][1], data[cereal][4],data[cereal][8],data[cereal][5],data[cereal][9],data[cereal][6]));
-	    brand.cereacles.push(brand.branches[brand.branches.length - 1].createCirc())
-	}
-    }
+	     if(cereals[cereal]['brand'] == name[0]){
+	        brand.branches.push(make_cereal(data[cereal][0], data[cereal][1], data[cereal][4],data[cereal][8],data[cereal][5],data[cereal][9],data[cereal][6]));
+	        brand.cereacles.push(brand.branches[brand.branches.length - 1].createCirc())
+        }
+      }
+    console.log(brand.branches);
     brand.line = document.createElementNS(
-	"http://www.w3.org/2000/svg",
-	"line"
-    )
+      "http://www.w3.org/2000/svg",
+      "line");
     brand.line.X1 = root.centerX;
     brand.line.Y1 = root.centerY;
     brand.line.X2 = brand.centerX;
@@ -43,7 +43,7 @@ var createBrand = function(name, root){
     brand.label.setAttribute("y", brand.centerY);
     brand.label.setAttribute("text-anchor", "middle");
     brand.label.innerHTML = name
-    brand.exploded = false;
+    brand.ed = false;
     brand.display = function(){
 	svg.appendChild(brand);
 	svg.appendChild(brand.line);
