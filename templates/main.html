@@ -8,7 +8,7 @@
       <!-- <link rel="stylesheet" href="../templates/cereal.css">--!>
       <style>
         body {
-          background-color:grey;
+          background-color:#ccc;
         }
         div#expand{
           display:none;
@@ -23,11 +23,13 @@
         <a id="exp-button" class="navbar-brand" href="#">Show me the cereal!</a>
       </nav>
       <script>
-        console.log("it lives");
         var thing=function(e){
-          console.log("click!");
-          document.getElementById("expand").style.display='block';};
-
+          if(document.getElementById("expand").style.display=="none"){
+            document.getElementById("expand").style.display='block';}
+          else{
+            document.getElementById("expand").style.display="none";
+          };
+        };
         var l=document.getElementById("exp-button");
         l.addEventListener("click", thing);
       </script>
