@@ -121,6 +121,12 @@ var circles = d3.selectAll("circle")
     .attr("cups", function(d){return d[14]})
     .attr("rating", function(d){return d[15]});
 
+
+
+d3.selectAll("circles")
+
+
+
   d3.select("body").select("svg").selectAll("rect").data(macros)
       .enter()
       .append("rect");

@@ -2,20 +2,48 @@
 <html>
     <head>
       <title> Cereal Numbers </title>
-      <h2> HELLO CEREALS! </h2>
       <meta charset="utf-8">
-      <style></style>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">       <link href="carousel.css" rel="stylesheet">
+
+      <!-- <link rel="stylesheet" href="../templates/cereal.css">-->
+      <style>
+        body {
+          background-color:white;
+        }
+        div#expand{
+          display:none;
+        }
+      </style>
+
     </head>
     <body>
-      <svg id="vimage" width="1000" height="1000"></svg>
 
-      <script src="http://d3js.org/d3.v3.min.js"></script>	    
+      <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+        <a class="navbar-brand" href="#">HELLO CEREALS!</a>
+        <a id="exp-button" class="navbar-brand" href="#">Show me the cereal!</a>
+      </nav>
+      <script>
+        var thing=function(e){
+          if(document.getElementById("expand").style.display=="none"){
+            document.getElementById("expand").style.display='block';}
+          else{
+            document.getElementById("expand").style.display="none";
+          };
+        };
+        var l=document.getElementById("exp-button");
+        l.addEventListener("click", thing);
+      </script>
+
+      <div id="expand">
+        <svg id="vimage" width="1000" height="1000"></svg>
+      </div>
+      <script src="http://d3js.org/d3.v3.min.js"></script>
       <script src="../static/bubblractions.js"></script>
       <script src="../static/data.js"></script>
       <script src="../static/cereal.js"></script>
       <script src="../static/brand.js"></script>
       <script src="../static/root.js"></script>
       <script src="../static/branches.js"></script>
+
     </body>
-   
 </html>
