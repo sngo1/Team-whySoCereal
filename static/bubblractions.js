@@ -86,6 +86,7 @@ var cereals = [
     ['Wheaties Honey Gold', 'G', 'C', 110.0, 2.0, 1.0, 200.0, 1.0, 16.0, 8.0, 60.0, 25.0, 1.0, 1.0, 0.75, 36.187559]
 ];
 
+// CREATED D3 OBJECTS ================================================================================================
 console.log(cereals);
 
 d3.select("body").select("svg").selectAll("circle").data(cereals)
@@ -118,10 +119,6 @@ d3.selectAll("circle")
     .attr("rating", function(d){return d[15]});
 
 console.log("CIRCLES: ", d3.selectAll("circle"));
-
-
-
-
 
 /* OLD CODE ===============================================================================================================
 var esveegee = document.getElementById("vimage");
