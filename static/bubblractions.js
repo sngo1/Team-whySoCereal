@@ -1,36 +1,10 @@
-var esveegee = document.getElementById("vimage");
+// Team whySoCereal
+// Samantha Ngo, Adam Abbas, Jawadul Kadir, Holden Higgins
+// Softdev -- pd7
+// P#01 - Viz
+// 2018 April
 
-var make_cereal = function(n, b, p, c, f, s, sd){
-  var cereal = {
-    name: n,
-    brand: b,
-    protein: p,
-    carbs: c,
-    fats: f,
-    sugar: s,
-    sodium: sd,
-    x: 100,
-    y: 100
-  };
-  cereal.createCirc = function(){
-    var cereacle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    cereacle.setAttribute("fill", "yellow");
-    cereacle.setAttribute("r", 50);
-    cereacle.setAttribute("cx", cereal.x);
-    cereacle.setAttribute("cy", cereal.y);
-    console.log(cereacle);
-    return cereacle;
-  };
-  cereal.hide = function(){
-    esveegee.removeChild();
-  };
-  cereal.display = function(){
-    consolelog("display!!");
-    esveegee.appendChild(cereal.createCirc());
-  }
-}
-
-var data = [
+var cereals = [
     ['name', 'mfr', 'type', 'calories', 'protein', 'fat', 'sodium', 'fiber', 'carbo', 'sugars', 'potass', 'vitamins', 'shelf', 'weight', 'cups', 'rating'] ,
     ['100% Bran', 'N', 'C', 70.0, 4.0, 1.0, 130.0, 10.0, 5.0, 6.0, 280.0, 25.0, 3.0, 1.0, 0.33, 68.402973] ,
     ['100% Natural Bran', 'Q', 'C', 120.0, 3.0, 5.0, 15.0, 2.0, 8.0, 8.0, 135.0, 0.0, 3.0, 1.0, 1.0, 33.983679] ,
@@ -109,6 +83,76 @@ var data = [
     ['Wheaties', 'G', 'C', 100.0, 3.0, 1.0, 200.0, 3.0, 17.0, 3.0, 110.0, 25.0, 1.0, 1.0, 1.0, 51.592193] ,
     ['Wheaties Honey Gold', 'G', 'C', 110.0, 2.0, 1.0, 200.0, 1.0, 16.0, 8.0, 60.0, 25.0, 1.0, 1.0, 0.75, 36.187559]
 ];
+
+console.log(cereals);
+
+d3.select("body").select("svg").selectAll("circle").data(cereals)
+    .enter()
+    .append("circle");
+
+d3.selectAll("circle")
+    .attr("cx", function(d){return Math.floor(Math.random() * 1001)})
+    .attr("cy", function(d){return Math.floor(Math.random() * 1001)})
+    .attr("r", 10)
+    .attr("stroke", "none")
+    .attr("fill", function() {
+	return "hsl(" + Math.random() * 361 + ", 100%, 50%)";
+    })
+    .attr("cereal_name", function(d){return d[0]})
+    .attr("manufacturer", function(d){return d[1]})
+    .attr("type", function(d){return d[2]})
+    .attr("calories", function(d){return d[3]})
+    .attr("protein", function(d){return d[4]})
+    .attr("fat", function(d){return d[5]})
+    .attr("sodium", function(d){return d[6]})
+    .attr("fiber", function(d){return d[7]})
+    .attr("carbs", function(d){return d[8]})
+    .attr("sugars", function(d){return d[9]})
+    .attr("potassium", function(d){return d[10]})
+    .attr("vitamins", function(d){return d[11]})
+    .attr("shelf", function(d){return d[12]})
+    .attr("weight", function(d){return d[13]})
+    .attr("cups", function(d){return d[14]})
+    .attr("rating", function(d){return d[15]});
+
+console.log("CIRCLES: ", d3.selectAll("circle"));
+
+
+
+
+
+/* OLD CODE ===============================================================================================================
+var esveegee = document.getElementById("vimage");
+
+var make_cereal = function(n, b, p, c, f, s, sd){
+  var cereal = {
+    name: n,
+    brand: b,
+    protein: p,
+    carbs: c,
+    fats: f,
+    sugar: s,
+    sodium: sd,
+    x: 100,
+    y: 100
+  };
+  cereal.createCirc = function(){
+    var cereacle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    cereacle.setAttribute("fill", "yellow");
+    cereacle.setAttribute("r", 50);
+    cereacle.setAttribute("cx", cereal.x);
+    cereacle.setAttribute("cy", cereal.y);
+    console.log(cereacle);
+    return cereacle;
+  };
+  cereal.hide = function(){
+    esveegee.removeChild();
+  };
+  cereal.display = function(){
+    consolelog("display!!");
+    esveegee.appendChild(cereal.createCirc());
+  }
+}
 
 
 var cereobjs = [];

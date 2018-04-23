@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var make_cereal = function(n, b, p, c, f, s, sd){
   var cereal = {
     name: n,
@@ -82,6 +83,13 @@ for(entry in data){
   cereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
 }
 console.log(cereobjs);
+=======
+// Team whySoCereal
+// Samantha Ngo, Adam Abbas, Jawadul Kadir, Holden Higgins
+// Softdev -- pd7
+// P#01 - Viz
+// 2018 April
+>>>>>>> 57c18fa70be3be2a61cd19c53989d67d67d6d332
 
 var data = [
     //['name', 'mfr', 'type', 'calories', 'protein', 'fat', 'sodium', 'fiber', 'carbo', 'sugars', 'potass', 'vitamins', 'shelf', 'weight', 'cups', 'rating'] ,
@@ -163,39 +171,42 @@ var data = [
     ['Wheaties Honey Gold', 'G', 'C', 110.0, 2.0, 1.0, 200.0, 1.0, 16.0, 8.0, 60.0, 25.0, 1.0, 1.0, 0.75, 36.187559]
 ];
 
-var displayData = function(){
-    for (var i = 0; i < data.length; i++){
-	console.log(data[i]);
-    }
+var make_cereal = function(n, b, p, c, f, s, sd){
+  var cereal = {
+    name: n,
+    brand: b,
+    protein: p,
+    carbs: c,
+    fats: f,
+    sugar: s,
+    sodium: sd,
+    x: 100,
+    y: 100
+  };
+  cereal.createCirc = function(){
+    var cereacle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    cereacle.setAttribute("fill", "yellow");
+    cereacle.setAttribute("r", 50);
+    cereacle.setAttribute("cx", cereal.x);
+    cereacle.setAttribute("cy", cereal.y);
+    console.log(cereacle);
+    return cereacle;
+  };
+  cereal.hide = function(){
+    esveegee.removeChild();
+  };
+  cereal.display = function(){
+    console.log("display!!");
+    esveegee.appendChild(cereal.createCirc());
+  }
+  return cereal;
 }
 
-/* IMPOSSIBLE ATTEMPTS TO READ IN TXT DATA FILE:
-/*
-var readFile = function(path) {
-    var file = new File(path);
-    console.log("FILE: ", file);
-    file.open("r");
-    var retStr = file.readln()
-    return retStr;
+var cereobjs = [];
+
+for(entry in data){
+  var cereal = data[entry];
+  cereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
 }
+console.log(cereobjs);
 
-readFile('cereals.txt');
-*/
-
-function readTextFile(filepath) {
-    var reader= new FileReader();
-    var file = new File([""],filepath);
-    reader.onload = function(e) { var text = reader.result; }
-    reader.readAsText(file);
-    console.log("TEXT: ", text);
-}
-/*
-    reader.readAsText(file);
-    // console.log("Wow");
-
-    console.log(this.result);
-}
-
-readTextFile('cereals.txt');
-
-*/

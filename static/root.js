@@ -1,3 +1,9 @@
+// Team whySoCereal
+// Samantha Ngo, Adam Abbas, Jawadul Kadir, Holden Higgins
+// Softdev -- pd7
+// P#01 - Viz
+// 2018 April
+
 var createRoot = function(){
     var root = document.createElementNS(
 	"http://www.w3.org/2000/svg",
@@ -38,7 +44,6 @@ var createRoot = function(){
     root.addEventListener("click", function(){root.exploded?root.contract():root.explode()})
     return root;
 }
-
 
 var kell_click = function(){
   //console.log(cereobjs);
