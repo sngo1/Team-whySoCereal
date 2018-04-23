@@ -29,6 +29,51 @@ var make_cereal = function(n, b, p, c, f, s, sd){
   return cereal;
 }
 
+var makeCereal = function(name, brand){
+  var cereal = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "circle"
+  )
+  var angle = Math.random() * 2 * Math.PI;
+  cereal.brand = brand.id;
+  cereal.centerX = brand.centerX + Math.floor(100 * Math.cos(angle));
+  cereal.centerY = brand.centerY + Math.floor(100 * Math.sin(angle));
+  cereal.radius = 35;
+  cereal.setAttribute("cx", cereal.centerX);
+  cereal.setAttribute("cy", cereal.centerY);
+  cereal.setAttribute("r", cereal.radius);
+  cereal.setAttribute("fill", "yellow");
+  cereal.setAttribute("id", name);
+
+  cereal.line = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "line");
+    cereal.line.X1 = brand.centerX;
+    cereal.line.Y1 = brand.centerY;
+    cereal.line.X2 = cereal.centerX;
+    cereal.line.Y2 = cereal.centerY;
+    cereal.line.setAttribute("x1", cereal.line.X1);
+    cereal.line.setAttribute("y1", cereal.line.Y1);
+    cereal.line.setAttribute("x2", cereal.line.X2);
+    cereal.line.setAttribute("y2", cereal.line.Y2);
+    cereal.line.setAttribute("stroke", "black");
+    cereal.line.setAttribute("id", name + "line");
+    cereal.label = document.createElementNS(
+	     "http://www.w3.org/2000/svg",
+	      "text");
+    cereal.label.setAttribute("x", cereal.centerX);
+    cereal.label.setAttribute("y", cereal.centerY);
+    cereal.label.setAttribute("text-anchor", "middle");
+    cereal.label.innerHTML = name;
+    cereal.ed = false;
+    cereal.display = function(){
+      svg.appendChild(cereal);
+      svg.appendChild(cereal.line);
+      svg.appendChild(cereal.label);
+    }
+
+
+}
 
 var cereobjs = [];
 
