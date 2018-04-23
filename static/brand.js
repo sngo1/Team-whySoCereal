@@ -11,11 +11,11 @@ var createBrand = function(name, root){
     )
     brand.root = root;
     angle = Math.random() * 2 * Math.PI;
-    brand.centerX = root.centerX + Math.floor(200 * Math.cos(angle));
-    brand.centerY = root.centerY + Math.floor(200 * Math.sin(angle));
+    brand.x = root.x + Math.floor(200 * Math.cos(angle));
+    brand.y = root.y + Math.floor(200 * Math.sin(angle));
     brand.radius = 50;
-    brand.setAttribute("cx", brand.centerX);
-    brand.setAttribute("cy", brand.centerY);
+    brand.setAttribute("cx", brand.x);
+    brand.setAttribute("cy", brand.y);
     brand.setAttribute("r", brand.radius);
     brand.setAttribute("fill", "lightgreen");
     brand.setAttribute("id", name);
@@ -27,14 +27,14 @@ var createBrand = function(name, root){
 	        brand.cereacles.push(brand.branches[brand.branches.length - 1].createCirc())
         }
       }
-    console.log(brand.branches);
+    //console.log(brand.branches);
     brand.line = document.createElementNS(
       "http://www.w3.org/2000/svg",
       "line");
-    brand.line.X1 = root.centerX;
-    brand.line.Y1 = root.centerY;
-    brand.line.X2 = brand.centerX;
-    brand.line.Y2 = brand.centerY;
+    brand.line.X1 = root.x;
+    brand.line.Y1 = root.y;
+    brand.line.X2 = brand.x;
+    brand.line.Y2 = brand.y;
     brand.line.setAttribute("x1", brand.line.X1);
     brand.line.setAttribute("y1", brand.line.Y1);
     brand.line.setAttribute("x2", brand.line.X2);
@@ -45,8 +45,8 @@ var createBrand = function(name, root){
 	"http://www.w3.org/2000/svg",
 	"text"
     )
-    brand.label.setAttribute("x", brand.centerX);
-    brand.label.setAttribute("y", brand.centerY);
+    brand.label.setAttribute("x", brand.x);
+    brand.label.setAttribute("y", brand.y);
     brand.label.setAttribute("text-anchor", "middle");
     brand.label.innerHTML = name
     brand.ed = false;
@@ -67,9 +67,9 @@ var createBrand = function(name, root){
 	brand.exploded = false;
     }
     brand.hide = function(){
-	svg.removeChild(brand);
-	svg.removeChild(brand.line);
-	svg.removeChild(brand.label);
+		svg.removeChild(brand);
+		svg.removeChild(brand.line);
+		svg.removeChild(brand.label);
     }
     brand.addEventListener("click",
 			   function(){
