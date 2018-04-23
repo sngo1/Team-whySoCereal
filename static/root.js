@@ -10,6 +10,7 @@ var createRoot = function(){
 		"circle"
 	)
 	root.setAttribute("id", "root");
+	root.type = "root";
 	root.x = svg.getAttribute("width") / 2;
 	root.y = svg.getAttribute("height") / 2;
 	root.radius = 50;

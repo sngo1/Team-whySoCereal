@@ -10,6 +10,7 @@ var createBrand = function(name, root){
 	"circle"
     )
     brand.root = root;
+	brand.type = "brand";
     angle = Math.random() * 2 * Math.PI;
     brand.x = root.x + Math.floor(200 * Math.cos(angle));
     brand.y = root.y + Math.floor(200 * Math.sin(angle));

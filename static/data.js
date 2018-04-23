@@ -122,3 +122,5 @@ for(entry in data){
   cereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
 }
 console.log(cereobjs);
+
+var mode = "protein";

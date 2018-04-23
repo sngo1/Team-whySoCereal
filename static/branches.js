@@ -10,11 +10,12 @@ var svg = document.getElementById("vimage");
 
 var root = createRoot();
 
-svg.appendChild(root);
+//svg.appendChild(root);
 
 //console.log(cereals);
 
 function ticked(){
+	svg.innerHTML = '';
 	// console.log("tick");
 	var u = d3.select('svg')
 	.selectAll('circle')
@@ -22,8 +23,14 @@ function ticked(){
 
 	u.enter()
 	.append('circle')
-	.attr('r', function(d){
-		return d.radius;
+	.attr('r', function(d, i){
+		if(d.type == "root"){
+			return 50;
+		}
+		else if(d.type == "brand"){
+			return 10;
+		}
+		else return d.protein;
 	})
 	.merge(u)
 	.attr('cx', function(d) {
