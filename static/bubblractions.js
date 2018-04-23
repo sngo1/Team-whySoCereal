@@ -135,19 +135,19 @@ d3.selectAll("circles")
 var adjust_size = function(mac){
   switch(mac){
     case 0:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[4] * 10)});
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[4] * 100)) * 2});
       break;
     case 1:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[8] * 3)});
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[8] * 9)) * 2});
       break;
     case 2:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[5] * 15)});
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[5] * 150)) * 2});
       break;
     case 3:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[9] * 5)});
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[9] * 25)) * 2});
       break;
     case 4:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[6] * .1)});
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[6])) * 2});
       break;
   }
 
