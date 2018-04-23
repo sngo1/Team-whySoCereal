@@ -86,14 +86,17 @@ var cereals = [
     ['Wheaties Honey Gold', 'G', 'C', 110.0, 2.0, 1.0, 200.0, 1.0, 16.0, 8.0, 60.0, 25.0, 1.0, 1.0, 0.75, 36.187559]
 ];
 
+macros = ["protein", "carbs", "fat", "sugar", "sodium"];
 // CREATED D3 OBJECTS ================================================================================================
 console.log(cereals);
+
+
 
 d3.select("body").select("svg").selectAll("circle").data(cereals)
     .enter()
     .append("circle");
 
-d3.selectAll("circle")
+var circles = d3.selectAll("circle")
     .attr("cx", function(d){return Math.floor(Math.random() * 1001)})
     .attr("cy", function(d){return Math.floor(Math.random() * 1001)})
     .attr("r", 10)
@@ -101,7 +104,7 @@ d3.selectAll("circle")
     .attr("fill", function() {
 	return "hsl(" + Math.random() * 361 + ", 100%, 50%)";
     })
-    .attr("cereal_name", function(d){return d[0]})
+    .attr("text", function(d){return d[0]})
     .attr("manufacturer", function(d){return d[1]})
     .attr("type", function(d){return d[2]})
     .attr("calories", function(d){return d[3]})
@@ -117,6 +120,79 @@ d3.selectAll("circle")
     .attr("weight", function(d){return d[13]})
     .attr("cups", function(d){return d[14]})
     .attr("rating", function(d){return d[15]});
+
+  d3.select("body").select("svg").selectAll("rect").data(macros)
+      .enter()
+      .append("rect");
+
+
+var adjust_size = function(mac){
+  switch(mac){
+    case 0:
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[4] * 10)});
+      break;
+    case 1:
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[8] * 3)});
+      break;
+    case 2:
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[5] * 15)});
+      break;
+    case 3:
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[9] * 5)});
+      break;
+    case 4:
+      d3.selectAll("circle").transition().attr("r", function(d){return Math.abs(d[6] * .1)});
+      break;
+  }
+
+}
+
+d3.selectAll("rect")
+      .attr("x", function(d, i){return ((1000 / 5) * (i+.25))})
+      .attr("y", 800)
+      .attr("width", 75)
+      .attr("height", 75)
+      .attr("fill", "slategray")
+      .on("click", function(d,i){
+        adjust_size(i);
+      });
+
+d3.select("body").select("svg").selectAll("text").data(macros)
+    .enter()
+    .append("text")
+
+d3.selectAll("text")
+    .attr("x",function(d, i){return ((1000 / 5) * (i+.25) + (75/2))})
+    .attr("y", 800 + (75/2))
+    .attr("text-anchor", "middle")
+    .text(function(d){return d})
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");;
+
+/*var protein = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "circle"
+);
+protein.setAttribute("cx", 170);
+protein.setAttribute("cy", 850);
+protein.setAttribute("r", 75);
+protein.setAttribute("fill", "slategrey");
+protein.setAttribute("id", "proton");
+protein.label = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "text"
+);
+protein.label.setAttribute("x", 170);
+protein.label.setAttribute("y", 850);
+protein.label.setAttribute("text-anchor", "middle");
+protein.label.innerHTML = "protein";
+svg.appendChild(protein);
+svg.appendChild(protein.label);*/
+
+
+
+
 
 console.log("CIRCLES: ", d3.selectAll("circle"));
 

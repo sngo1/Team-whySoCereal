@@ -1,95 +1,8 @@
-<<<<<<< HEAD
-var make_cereal = function(n, b, p, c, f, s, sd){
-  var cereal = {
-    name: n,
-    brand: b,
-    protein: p,
-    carbs: c,
-    fats: f,
-    sugar: s,
-    sodium: sd,
-    x: 100,
-    y: 100
-  };
-  cereal.createCirc = function(){
-    var cereacle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    cereacle.setAttribute("fill", "yellow");
-    cereacle.setAttribute("r", 50);
-    cereacle.setAttribute("cx", cereal.x);
-    cereacle.setAttribute("cy", cereal.y);
-    console.log(cereacle);
-    return cereacle;
-  };
-  cereal.hide = function(){
-    esveegee.removeChild();
-  };
-  cereal.display = function(){
-    consolelog("display!!");
-    esveegee.appendChild(cereal.createCirc());
-  }
-  return cereal;
-}
-
-var makeCereal = function(name, brand){
-  var cereal = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "circle"
-  )
-  var angle = Math.random() * 2 * Math.PI;
-  cereal.brand = brand.id;
-  cereal.centerX = brand.centerX + Math.floor(100 * Math.cos(angle));
-  cereal.centerY = brand.centerY + Math.floor(100 * Math.sin(angle));
-  cereal.radius = 35;
-  cereal.setAttribute("cx", cereal.centerX);
-  cereal.setAttribute("cy", cereal.centerY);
-  cereal.setAttribute("r", cereal.radius);
-  cereal.setAttribute("fill", "yellow");
-  cereal.setAttribute("id", name);
-
-  cereal.line = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "line");
-    cereal.line.X1 = brand.centerX;
-    cereal.line.Y1 = brand.centerY;
-    cereal.line.X2 = cereal.centerX;
-    cereal.line.Y2 = cereal.centerY;
-    cereal.line.setAttribute("x1", cereal.line.X1);
-    cereal.line.setAttribute("y1", cereal.line.Y1);
-    cereal.line.setAttribute("x2", cereal.line.X2);
-    cereal.line.setAttribute("y2", cereal.line.Y2);
-    cereal.line.setAttribute("stroke", "black");
-    cereal.line.setAttribute("id", name + "line");
-    cereal.label = document.createElementNS(
-	     "http://www.w3.org/2000/svg",
-	      "text");
-    cereal.label.setAttribute("x", cereal.centerX);
-    cereal.label.setAttribute("y", cereal.centerY);
-    cereal.label.setAttribute("text-anchor", "middle");
-    cereal.label.innerHTML = name;
-    cereal.ed = false;
-    cereal.display = function(){
-      svg.appendChild(cereal);
-      svg.appendChild(cereal.line);
-      svg.appendChild(cereal.label);
-    }
-
-
-}
-
-var cereobjs = [];
-
-for(entry in data){
-  var cereal = data[entry];
-  cereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
-}
-console.log(cereobjs);
-=======
 // Team whySoCereal
 // Samantha Ngo, Adam Abbas, Jawadul Kadir, Holden Higgins
 // Softdev -- pd7
 // P#01 - Viz
 // 2018 April
->>>>>>> 57c18fa70be3be2a61cd19c53989d67d67d6d332
 
 var data = [
     //['name', 'mfr', 'type', 'calories', 'protein', 'fat', 'sodium', 'fiber', 'carbo', 'sugars', 'potass', 'vitamins', 'shelf', 'weight', 'cups', 'rating'] ,
@@ -209,4 +122,3 @@ for(entry in data){
   cereobjs.push(make_cereal(cereal[0], cereal[1], cereal[4],cereal[8],cereal[5],cereal[9],cereal[6]));
 }
 console.log(cereobjs);
-
