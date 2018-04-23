@@ -65,4 +65,5 @@ simulation.force('charge', d3.forceManyBody())
 	}))
 	.on('tick', ticked);
 
-console.log(nodes);
+console.log("NODES: ", nodes);
+

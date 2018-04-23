@@ -30,4 +30,7 @@ At its core, our page will be similar to a Code Flower, with user interaction ch
 ### Let's See the D3
 We use d3 to create bubbles in svg, as well as to make any sort of animation touches. Clicking on bubbles will cause branches to pop out, connecting the bubbles. We can accomplish this hierarchy by using d3 Object-oriented programing. The animations itself are also driven using d3 transitions and physics. 
 
-### Bug to look out for:
+### Bugs to look out for:
+Unfortunately, we've been unable to get the titles to display, which is an essential part of your experience and we are working on that. In addition, the transitions may not be working just yet, so you may not be able to click on anything. We realize these are major bugs, but we hope that you can appreciate our work that has gone into accomplishing what we have so far. We hope that you'll be able to wait for our bug fixes in version 2.0 coming out sooner than you think!
+
+#### Thanks for checking out our project! Please feel free to open any comments/concerns under the issues section of our repo-- the more help, the better. 
