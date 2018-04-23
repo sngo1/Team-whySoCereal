@@ -4,8 +4,10 @@
 // P#01 - Viz
 // 2018 April
 
+// ARRAY REFERENCE:
+// ['name', 'mfr', 'type', 'calories', 'protein', 'fat', 'sodium', 'fiber', 'carbo', 'sugars', 'potass', 'vitamins', 'shelf', 'weight', 'cups', 'rating']
+
 var cereals = [
-    ['name', 'mfr', 'type', 'calories', 'protein', 'fat', 'sodium', 'fiber', 'carbo', 'sugars', 'potass', 'vitamins', 'shelf', 'weight', 'cups', 'rating'] ,
     ['100% Bran', 'N', 'C', 70.0, 4.0, 1.0, 130.0, 10.0, 5.0, 6.0, 280.0, 25.0, 3.0, 1.0, 0.33, 68.402973] ,
     ['100% Natural Bran', 'Q', 'C', 120.0, 3.0, 5.0, 15.0, 2.0, 8.0, 8.0, 135.0, 0.0, 3.0, 1.0, 1.0, 33.983679] ,
     ['All-Bran', 'K', 'C', 70.0, 4.0, 1.0, 260.0, 9.0, 7.0, 5.0, 320.0, 25.0, 3.0, 1.0, 0.33, 59.425505] ,
@@ -84,6 +86,7 @@ var cereals = [
     ['Wheaties Honey Gold', 'G', 'C', 110.0, 2.0, 1.0, 200.0, 1.0, 16.0, 8.0, 60.0, 25.0, 1.0, 1.0, 0.75, 36.187559]
 ];
 
+// CREATED D3 OBJECTS ================================================================================================
 console.log(cereals);
 
 d3.select("body").select("svg").selectAll("circle").data(cereals)
@@ -116,10 +119,6 @@ d3.selectAll("circle")
     .attr("rating", function(d){return d[15]});
 
 console.log("CIRCLES: ", d3.selectAll("circle"));
-
-
-
-
 
 /* OLD CODE ===============================================================================================================
 var esveegee = document.getElementById("vimage");
