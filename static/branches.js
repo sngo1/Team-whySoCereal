@@ -32,6 +32,7 @@ function ticked(){
 		}
 		else return d.protein;
 	})
+	.attr('fill','orange')
 	.merge(u)
 	.attr('cx', function(d) {
 		return d.x

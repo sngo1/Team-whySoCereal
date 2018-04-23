@@ -44,7 +44,7 @@ Completed database and csv parser functions
 jawadulK -- 2018-04-12 00:18
 Worked on branch objectification
 
-abbasA -- 2018-04-12 13:16
+adamA -- 2018-04-12 13:16
 Wrote the cereal object constructer, and wrote the theoretically working code to display and resize cereals when things are clicked
 
 jawadulK -- 2018-04-12 13:18
@@ -58,17 +58,29 @@ samanthaN -- 2018-04-12 20:16
 Failed to find a way to make conversion; manually created javascript array
 using dataFunctions.py functions and GUI methods.
 
-abbasA -- 2018-04-16 13:13
+adamA -- 2018-04-16 13:13
 Converted all the cereal data into an array of cereal objects!! Made the functions for all the macros.
 
-abbasA -- 2018-04-22 14:43
+jawadulK -- 2018-04-18 13:18
+Implemented a cereal branching system
+
+jawadulK -- 2018-04-19 13:18
+Cleaned up file format and added more brand and cereal attributes
+
+adamA -- 2018-04-22 14:43
 Working on debugging. The cereobjs array is empty, probably has something to do with carrying over from other files, but throwing all of the code into one file breaks it.
 
-abbasA -- 2018-04-22 18:44
+adamA -- 2018-04-22 18:44
 Array now gets properly made, cereal coordinates arent changing though... they keep showing up as 0
 
-abbasA -- 2018-04-23 00:50
+adamA -- 2018-04-23 00:50
 Macro resizing works!!!!!!!!!!!! Clicking any of our 5 nutrients will now resize all the cereals based on that value.
 
-abbasA -- 2018-04-23 1:11
+adamA -- 2018-04-23 1:11
 Resizing is now based off a square root, so that area is what reflects the difference
+
+jawadulK -- 2018-04-23 02:00
+Added physics
+
+jawadulK -- 2018-04-23 3:00
+Sized cereals based off proteins
