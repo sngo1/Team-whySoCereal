@@ -69,3 +69,6 @@ Array now gets properly made, cereal coordinates arent changing though... they k
 
 abbasA -- 2018-04-23 00:50
 Macro resizing works!!!!!!!!!!!! Clicking any of our 5 nutrients will now resize all the cereals based on that value.
+
+abbasA -- 2018-04-23 1:11
+Resizing is now based off a square root, so that area is what reflects the difference
