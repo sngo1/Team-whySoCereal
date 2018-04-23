@@ -10,17 +10,14 @@
         body {
           background-color:white;
         }
-        div#expand{
-          display:none;
-        }
+        
       </style>
 
     </head>
     <body>
 
       <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-        <a class="navbar-brand" href="#">HELLO CEREALS!</a>
-        <a id="exp-button" class="navbar-brand" href="#">Show me the cereal!</a>
+        <p class="navbar-brand">whySoCereal | Cereal Numbers</p>
       </nav>
       <script>
         var thing=function(e){
@@ -33,6 +30,7 @@
         var l=document.getElementById("exp-button");
         l.addEventListener("click", thing);
       </script>
+
 
       <div id="expand">
         <svg id="vimage" width="1000" height="1000"></svg>
