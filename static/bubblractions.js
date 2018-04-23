@@ -1,3 +1,9 @@
+// Team whySoCereal
+// Samantha Ngo, Adam Abbas, Jawadul Kadir, Holden Higgins
+// Softdev -- pd7
+// P#01 - Viz
+// 2018 April
+
 var esveegee = document.getElementById("vimage");
 
 var make_cereal = function(n, b, p, c, f, s, sd){

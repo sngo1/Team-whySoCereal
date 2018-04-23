@@ -1,3 +1,9 @@
+// Team whySoCereal
+// Samantha Ngo, Adam Abbas, Jawadul Kadir, Holden Higgins
+// Softdev -- pd7
+// P#01 - Viz
+// 2018 April
+
 var createBrand = function(name, root){
     var brand = document.createElementNS(
 	"http://www.w3.org/2000/svg",
