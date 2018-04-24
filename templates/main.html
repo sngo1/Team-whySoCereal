@@ -10,14 +10,14 @@
         body {
           background-color:white;
         }
-        
+
       </style>
 
-      
+
       <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
         <p class="navbar-brand">whySoCereal | Cereal Numbers</p>
       </nav>
-      
+
       <h2 style="text-align:center">Cereal Numbers</h2>
 <h3 style="text-align:center"> Stuyvesant High School's SoftDev Analysis of a Cereal Dataset by Team whySoCereal [Adam Abbas, Holden Higgins, Jawad Kadir, & Samantha Ngo][Softdev pd7] </h3>
 
@@ -27,7 +27,7 @@
 
     </head>
     <body>
-
+<!--
       <script>
         var thing=function(e){
           if(document.getElementById("expand").style.display=="none"){
@@ -38,20 +38,70 @@
         };
         var l=document.getElementById("exp-button");
         l.addEventListener("click", thing);
-      </script>
+      </script> -->
 
 
       <div id="expand" style="text-align:center;">
         <svg id="vimage" width="1000" height="1000"></svg>
+        <button id="protein" onclick="adjust_size(0);">Protein</button>
+        <button id="carbs" onclick="adjust_size(1);">Carbs</button>
+        <button id="fats" onclick="adjust_size(2);">Fats</button>
+        <button id="sugars" onclick="adjust_size(3);">Sugar</button>
+        <button id="sodium" onclick="adjust_size(4);">Sodium</button>
 	<h3 style="text-align:center"> Have any questions/comments/concerns? Open an issue on our github repo: <a href="https://github.com/sngo1/whySoCereal"> https://github.com/sngo1/whySoCereal</a></h3>
       </div>
       <script src="http://d3js.org/d3.v4.min.js"></script>
-      <script src="../static/bubblractions.js"></script>
       <script src="../static/data.js"></script>
       <script src="../static/cereal.js"></script>
       <script src="../static/brand.js"></script>
       <script src="../static/root.js"></script>
       <script src="../static/branches.js"></script>
+      <script src="../static/bubblractions.js"></script>
 
     </body>
+    <script>
+    console.log("im doing stuff")
+          var adjust_size = function(mac){
+            console.log("I work");
+            switch(mac){
+              case 0:
+                return function(){
+                  console.log("kachow");
+                  d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[4] * 100)) * 2});
+                };
+                break;
+              case 1:
+                return function(){
+                  d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[8] * 9)) * 2});
+                };
+                break;
+              case 2:
+                return function(){
+                  d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[5] * 150)) * 2});
+                };
+                break;
+              case 3:
+                return function(){
+                  d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[9] * 25)) * 2});
+                };
+                break;
+              case 4:
+                return function(){
+                  d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[6])) * 2});
+                };
+                break;
+            }
+
+          }
+
+          /*var buttons = document.getElementsByTagName("button");
+          console.log(buttons);
+          for(button in buttons){
+            console.log(buttons[button]);
+            buttons[button].onclick = adjust_size(button);
+            console.log(buttons[button]);
+          }*/
+
+      console.log("I did stuff");
+    </script>
 </html>

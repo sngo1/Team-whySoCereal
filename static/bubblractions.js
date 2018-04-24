@@ -123,58 +123,6 @@ var circles = d3.selectAll("circle")
 
 
 
-d3.selectAll("circles")
-
-
-
-  d3.select("body").select("svg").selectAll("rect").data(macros)
-      .enter()
-      .append("rect");
-
-
-var adjust_size = function(mac){
-  switch(mac){
-    case 0:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[4] * 100)) * 2});
-      break;
-    case 1:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[8] * 9)) * 2});
-      break;
-    case 2:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[5] * 150)) * 2});
-      break;
-    case 3:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[9] * 25)) * 2});
-      break;
-    case 4:
-      d3.selectAll("circle").transition().attr("r", function(d){return Math.sqrt(Math.abs(d[6])) * 2});
-      break;
-  }
-
-}
-
-d3.selectAll("rect")
-      .attr("x", function(d, i){return ((1000 / 5) * (i+.25))})
-      .attr("y", 800)
-      .attr("width", 75)
-      .attr("height", 75)
-      .attr("fill", "slategray")
-      .on("click", function(d,i){
-        adjust_size(i);
-      });
-
-d3.select("body").select("svg").selectAll("text").data(macros)
-    .enter()
-    .append("text")
-
-d3.selectAll("text")
-    .attr("x",function(d, i){return ((1000 / 5) * (i+.25) + (75/2))})
-    .attr("y", 800 + (75/2))
-    .attr("text-anchor", "middle")
-    .text(function(d){return d})
-    .attr("font-family", "sans-serif")
-    .attr("font-size", "20px")
-    .attr("fill", "red");;
 
 /*var protein = document.createElementNS(
   "http://www.w3.org/2000/svg",
